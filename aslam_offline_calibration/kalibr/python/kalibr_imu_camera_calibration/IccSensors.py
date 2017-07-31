@@ -183,7 +183,7 @@ class IccCamera():
         self.T_extrinsic = sm.Transformation( sm.rt2Transform( R_i_c, self.T_extrinsic.t() ) )
 
         #estimate gravity in the world coordinate frame as the mean specific force
-        #利用与imu的时间对应来估计每一帧图像对应的重力？？？
+        #估计重力方向，在x,y,z方向
         a_w = []
         for im in imu.imuData:
             tk = im.stamp.toSec()
